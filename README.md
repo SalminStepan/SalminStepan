@@ -1,4 +1,4 @@
-## Python Backend Developer (Junior)
+## Python Backend Developer | Telegram Bots | PostgreSQL 
 
 Transitioning into backend development after 11 years in the bar industry.
 Currently focused on Python backend and looking for a junior or internship position.
@@ -9,10 +9,15 @@ Currently focused on Python backend and looking for a junior or internship posit
 - aiogram
 - Pydantic
 
+### What I do
+- Build backend services with Python
+- Design database structures (PostgreSQL)
+- Develop Telegram bots with real use cases
+
 ### Projects
 
 #### Cocktail Manager Bot
-Telegram bot for managing cocktail recipes:
+Telegram bot for managing cocktail recipes (real-world use case from bar industry):
 - CRUD operations, search, pagination
 - FSM (step-by-step input flow)
 - Layered architecture: handlers / services / repositories
@@ -24,4 +29,4 @@ Telegram bot for managing cocktail recipes:
 
 ---
 
-Open to opportunities. Ready to learn, contribute, and grow as a backend developer.
+Looking for a junior backend role. Available for interviews.
