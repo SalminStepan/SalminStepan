@@ -10,7 +10,7 @@ Right now I focus on Python backend development: FastAPI, PostgreSQL, aiogram, P
 
 ### Tech Stack
 
-**Backend:** Python, FastAPI, aiogram  
+**Backend:** Python, FastAPI, aiogram, pytest 
 **Databases:** PostgreSQL, SQL, psycopg  
 **Data and validation:** Pydantic, JSON, JSON-LD, BeautifulSoup, httpx  
 **Architecture:** handlers / services / repositories, CRUD, pagination, search, FSM, environment-based configuration  
