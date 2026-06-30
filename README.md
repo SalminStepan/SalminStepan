@@ -2,124 +2,119 @@
 
 ## Python Backend Developer
 
-I build backend services, Telegram bots, data pipelines, and database-backed tools with Python.
+Python backend developer focused on backend services, Telegram bots, data pipelines, and PostgreSQL-backed applications.
 
-My background is 11 years in the bar industry, so I like building software around real workflows: structured data, fast search, admin operations, clean input flows, and tools that people can actually use at work.
+Main stack: Python, FastAPI, PostgreSQL, aiogram, Pydantic, psycopg, SQL, JSON/JSON-LD, httpx, BeautifulSoup, Git, Linux.
 
-Right now I focus on Python backend development: FastAPI, PostgreSQL, aiogram, Pydantic, data parsing, and layered application architecture.
+Background: 11 years in the bar industry. Current projects are mostly related to structured recipe data, internal tools, CRUD workflows, search, and automation.
 
-### Tech Stack
+## Tech Stack
 
-**Backend:** Python, FastAPI, aiogram  
-**Databases:** PostgreSQL, SQL, psycopg  
-**Data and validation:** Pydantic, JSON, JSON-LD, BeautifulSoup, httpx  
-**Architecture:** handlers / services / repositories, CRUD, pagination, search, FSM, environment-based configuration  
-**Tools:** Git, Linux, systemd, virtual environments
+**Backend:** Python, FastAPI, aiogram
+**Databases:** PostgreSQL, SQL, psycopg
+**Data:** JSON, JSON-LD, BeautifulSoup, httpx
+**Validation:** Pydantic
+**Architecture:** handlers, services, repositories, CRUD, pagination, FSM, environment-based configuration
+**Tools:** Git, Linux, systemd, virtual environments, pytest
 
-### What I Build
+## Projects
 
-- Backend services with REST APIs, validation, repository layers, and PostgreSQL storage
-- Telegram bots with real business scenarios, admin commands, FSM flows, and database-backed CRUD
-- ETL/data preparation pipelines for collecting, extracting, normalizing, and saving structured data
-- CLI tools with persistence, input validation, error handling, and clean separation of responsibilities
+### Cocktail Manager Bot
 
-### Featured Projects
+Telegram bot for managing a cocktail recipe database.
 
-All projects below were built by me.
+Features:
 
-#### Cocktail Manager Bot
+* CRUD for cocktails and ingredients
+* PostgreSQL storage
+* Search by cocktail name and ingredients
+* Paginated cocktail list
+* FSM-based recipe creation flow
+* Admin-only create, edit, and delete commands
+* Pydantic schemas
+* Layered structure: handlers, services, repositories
+* Server deployment with systemd
 
-Telegram bot for managing a structured cocktail recipe database.
-
-Built from scratch around a real bar workflow: adding recipes, searching cocktails, listing results with pagination, and managing admin-only operations.
-
-**Highlights:**
-
-- Full CRUD for cocktails and ingredients
-- FSM-based step-by-step input flow
-- Search by name and ingredients
-- PostgreSQL schema for cocktails and structured ingredients
-- Layered architecture: handlers, services, repositories, schemas
-- Pydantic models for typed data validation
-- Admin-only create, edit, and delete commands
-- Deployed on a server with systemd
-
-Repository: [cocktail_manager_bot_tg](https://github.com/SalminStepan/cocktail_manager_bot_tg)  
+Repository: [cocktail_manager_bot_tg](https://github.com/SalminStepan/cocktail_manager_bot_tg)
 Live bot: [@Bartenders_Cocktail_bot](https://t.me/Bartenders_Cocktail_bot)
 
-#### Cocktail ETL
+### Cocktail ETL
 
-Data pipeline for collecting and normalizing cocktail recipe data from structured web sources.
+ETL pipeline for collecting, extracting, normalizing, and importing cocktail recipe data.
 
-The pipeline reads sitemap URLs, downloads recipe pages, extracts JSON-LD Recipe data, stores raw data, normalizes recipe fields, and prepares clean JSON output for future import into a database or internal tool.
+Features:
 
-**Highlights:**
-
-- Sitemap reader and recipe page fetcher
-- JSON-LD Recipe extraction
-- Raw and normalized JSON storage
-- Ingredient normalization with parse status and parse errors
-- Modular pipeline architecture
-- Built as a Python package with `pyproject.toml`
+* Sitemap URL extraction
+* Recipe page fetching
+* JSON-LD `Recipe` extraction
+* Raw JSON storage
+* Clean normalized JSON output
+* Ingredient parsing
+* Parse status and parse error tracking
+* PostgreSQL schema
+* Idempotent cocktail upsert by `source_url`
+* Ingredient replacement on re-import
+* CLI command for importing clean JSON into PostgreSQL
+* Pytest coverage for normalization logic
 
 Repository: [cocktail_etl](https://github.com/SalminStepan/cocktail_etl)
 
-#### User Registry API
+### User Registry API
 
-REST API for managing users with FastAPI and PostgreSQL.
+REST API for user management with FastAPI and PostgreSQL.
 
-**Highlights:**
+Features:
 
-- CRUD endpoints for user management
-- Search and pagination
-- PostgreSQL repository layer
-- Pydantic request and response schemas
-- Dependency injection for database access
-- Swagger/OpenAPI documentation
+* CRUD endpoints
+* Search and pagination
+* PostgreSQL repository layer
+* Pydantic request and response schemas
+* Dependency-based database access
+* Swagger/OpenAPI documentation
 
 Repository: [project_3_user_registry_API](https://github.com/SalminStepan/project_3_user_registry_API)
 
-#### User Registry CLI with PostgreSQL
+### User Registry CLI with PostgreSQL
 
 Command-line user registry backed by PostgreSQL.
 
-**Highlights:**
+Features:
 
-- CRUD operations from the terminal
-- Repository layer separated from CLI logic
-- Parameterized SQL queries
-- Case-insensitive search
-- Domain-level error mapping
-- Logging with configurable log level
+* CRUD operations from terminal
+* Repository layer separated from CLI logic
+* Parameterized SQL queries
+* Case-insensitive search
+* Error handling
+* Logging
 
 Repository: [project_2_user_registry_pg](https://github.com/SalminStepan/project_2_user_registry_pg)
 
-#### User Registry CLI
+### User Registry CLI
 
-JSON-backed CLI application for managing users.
+JSON-backed CLI application for user management.
 
-**Highlights:**
+Features:
 
-- Add, list, get, update, delete, and search commands
-- JSON persistence
-- Input validation and error handling
-- Separation between command handling and storage logic
+* Add, list, get, update, delete, and search commands
+* JSON persistence
+* Input validation
+* Error handling
+* Separation between command logic and storage logic
 
 Repository: [user-registry-cli](https://github.com/SalminStepan/user-registry-cli)
 
-### Engineering Focus
+## Current Focus
 
-I care about code that is easy to read, easy to extend, and close to the problem it solves.
+* Python backend development
+* FastAPI
+* PostgreSQL
+* Telegram bots
+* ETL/data preparation
+* Testing with pytest
+* Clean project structure and layered architecture
 
-In my projects I practice:
-
-- separating application layers instead of mixing database, business logic, and user interface code
-- using PostgreSQL intentionally: schemas, constraints, indexes, parameterized queries
-- designing practical CRUD flows with validation and predictable error handling
-- turning domain knowledge into usable software, especially around bar operations and recipe data
-
-### Contact
+## Contact
 
 GitHub: [SalminStepan](https://github.com/SalminStepan)
 
-Open to backend roles where I can work with Python, databases, APIs, bots, and practical business tools.
+Open to junior Python backend roles involving APIs, databases, bots, ETL pipelines, and internal business tools.
