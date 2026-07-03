@@ -1,120 +1,120 @@
 # Stepan Salmin
 
-## Python Backend Developer
+Junior Python Backend Developer
 
-Python backend developer focused on backend services, Telegram bots, data pipelines, and PostgreSQL-backed applications.
+I build backend services, Telegram bots, data pipelines, and PostgreSQL-backed tools with Python.
 
-Main stack: Python, FastAPI, PostgreSQL, aiogram, Pydantic, psycopg, SQL, JSON/JSON-LD, httpx, BeautifulSoup, Git, Linux.
+My current work is mostly around structured cocktail data: collecting recipes, normalizing ingredients, storing them in PostgreSQL, and making them searchable through bots and backend services.
 
-Background: 11 years in the bar industry. Current projects are mostly related to structured recipe data, internal tools, CRUD workflows, search, and automation.
+Before moving into software development, I spent 11 years in the bar industry. That background helps me build projects around real workflows instead of abstract examples.
 
 ## Tech Stack
 
-**Backend:** Python, FastAPI, aiogram
-**Databases:** PostgreSQL, SQL, psycopg
-**Data:** JSON, JSON-LD, BeautifulSoup, httpx
-**Validation:** Pydantic
-**Architecture:** handlers, services, repositories, CRUD, pagination, FSM, environment-based configuration
-**Tools:** Git, Linux, systemd, virtual environments, pytest
+**Backend:** Python, FastAPI, aiogram  
+**Databases:** PostgreSQL, SQL, psycopg  
+**Data:** JSON, JSON-LD, XML, httpx, BeautifulSoup  
+**Validation and testing:** Pydantic, pytest  
+**Architecture:** handlers, services, repositories, CRUD, pagination, FSM, environment-based configuration  
+**Tools:** Git, Linux, systemd, virtual environments
 
 ## Projects
 
+### Cocktail ETL
+
+[cocktail_etl](https://github.com/SalminStepan/cocktail_etl)
+
+ETL pipeline for collecting, extracting, normalizing, and importing cocktail recipes from Difford's Guide into PostgreSQL.
+
+Pipeline:
+
+```text
+sitemap.xml -> recipe URLs -> HTML pages -> JSON-LD Recipe -> raw JSON -> clean JSON -> PostgreSQL
+```
+
+Current full scrape results:
+
+* 6,892 recipe URLs found
+* 6,614 raw recipes extracted
+* 6,614 clean recipes generated
+* 6,614 cocktails loaded into PostgreSQL
+* 30,761 ingredients stored
+* 0 failed recipes
+* about 96.0% extraction coverage
+* about 84.9% fully normalized recipes
+* about 99.88% ingredient parse coverage
+
+What it includes:
+
+* sitemap XML parsing;
+* delayed page fetching with `httpx`;
+* JSON-LD `Recipe` extraction from HTML;
+* recipe normalization for ingredients, method, glass, garnish, description, and image URL;
+* parse quality tracking through `parse_status` and `parse_errors`;
+* idempotent PostgreSQL import using `source_url`;
+* ingredient replacement on re-import to avoid duplicates;
+* pytest coverage for normalization logic.
+
+Stack: Python, PostgreSQL, psycopg, httpx, BeautifulSoup, JSON-LD, XML, pytest.
+
 ### Cocktail Manager Bot
+
+[cocktail_manager_bot_tg](https://github.com/SalminStepan/cocktail_manager_bot_tg)  
+Live bot: [@Bartenders_Cocktail_bot](https://t.me/Bartenders_Cocktail_bot)
 
 Telegram bot for managing a cocktail recipe database.
 
-Features:
+What it includes:
 
-* CRUD for cocktails and ingredients
-* PostgreSQL storage
-* Search by cocktail name and ingredients
-* Paginated cocktail list
-* FSM-based recipe creation flow
-* Admin-only create, edit, and delete commands
-* Pydantic schemas
-* Layered structure: handlers, services, repositories
-* Server deployment with systemd
+* CRUD operations for cocktails and ingredients;
+* PostgreSQL storage;
+* search by cocktail name and ingredients;
+* paginated cocktail list;
+* full recipe view;
+* FSM-based recipe creation and editing flow;
+* admin-only create, edit, and delete commands;
+* Pydantic schemas;
+* layered structure: handlers, services, repositories, schemas, database;
+* parameterized SQL queries and whitelist-based field updates.
 
-Repository: [cocktail_manager_bot_tg](https://github.com/SalminStepan/cocktail_manager_bot_tg)
-Live bot: [@Bartenders_Cocktail_bot](https://t.me/Bartenders_Cocktail_bot)
-
-### Cocktail ETL
-
-ETL pipeline for collecting, extracting, normalizing, and importing cocktail recipe data.
-
-Features:
-
-* Sitemap URL extraction
-* Recipe page fetching
-* JSON-LD `Recipe` extraction
-* Raw JSON storage
-* Clean normalized JSON output
-* Ingredient parsing
-* Parse status and parse error tracking
-* PostgreSQL schema
-* Idempotent cocktail upsert by `source_url`
-* Ingredient replacement on re-import
-* CLI command for importing clean JSON into PostgreSQL
-* Pytest coverage for normalization logic
-
-Repository: [cocktail_etl](https://github.com/SalminStepan/cocktail_etl)
+Stack: Python, aiogram, PostgreSQL, psycopg, Pydantic, pytest.
 
 ### User Registry API
 
+[project_3_user_registry_API](https://github.com/SalminStepan/project_3_user_registry_API)
+
 REST API for user management with FastAPI and PostgreSQL.
 
-Features:
+Includes CRUD endpoints, search, pagination, partial updates, Pydantic schemas, repository layer, dependency-based database access, and Swagger/OpenAPI documentation.
 
-* CRUD endpoints
-* Search and pagination
-* PostgreSQL repository layer
-* Pydantic request and response schemas
-* Dependency-based database access
-* Swagger/OpenAPI documentation
-
-Repository: [project_3_user_registry_API](https://github.com/SalminStepan/project_3_user_registry_API)
+Stack: Python, FastAPI, PostgreSQL, psycopg, Pydantic, Uvicorn.
 
 ### User Registry CLI with PostgreSQL
 
+[project_2_user_registry_pg](https://github.com/SalminStepan/project_2_user_registry_pg)
+
 Command-line user registry backed by PostgreSQL.
 
-Features:
+Includes terminal CRUD commands, repository layer, parameterized SQL queries, case-insensitive search with `ILIKE`, error handling, logging, and environment-based configuration.
 
-* CRUD operations from terminal
-* Repository layer separated from CLI logic
-* Parameterized SQL queries
-* Case-insensitive search
-* Error handling
-* Logging
-
-Repository: [project_2_user_registry_pg](https://github.com/SalminStepan/project_2_user_registry_pg)
+Stack: Python, PostgreSQL, psycopg, SQL, logging.
 
 ### User Registry CLI
 
+[user-registry-cli](https://github.com/SalminStepan/user-registry-cli)
+
 JSON-backed CLI application for user management.
 
-Features:
-
-* Add, list, get, update, delete, and search commands
-* JSON persistence
-* Input validation
-* Error handling
-* Separation between command logic and storage logic
-
-Repository: [user-registry-cli](https://github.com/SalminStepan/user-registry-cli)
+Includes add, list, get, update, delete, and search commands, JSON persistence, input validation, and separation between command logic and storage logic.
 
 ## Current Focus
 
-* Python backend development
-* FastAPI
-* PostgreSQL
-* Telegram bots
-* ETL/data preparation
-* Testing with pytest
-* Clean project structure and layered architecture
+* Building a stronger FastAPI backend around the cocktail database;
+* adding SQLAlchemy and Alembic to future backend projects;
+* improving Docker, API tests, CI, and production-style project setup;
+* keeping the cocktail ETL and bot connected to practical use cases.
 
 ## Contact
 
 GitHub: [SalminStepan](https://github.com/SalminStepan)
 
-Open to junior Python backend roles involving APIs, databases, bots, ETL pipelines, and internal business tools.
+Open to junior Python backend roles involving APIs, PostgreSQL, Telegram bots, ETL pipelines, and internal business tools.
